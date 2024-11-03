@@ -1,17 +1,14 @@
 import React from 'react';
 
 export const ArenbergLogo = ({ isCollapsed }) => (
-  <div className={`relative ${isCollapsed ? 'h-8 w-8' : 'h-12 w-24'} flex items-center justify-center`}>
-    <svg viewBox="0 0 120 60" className="w-full h-full">
-      <circle 
-        cx="60" 
-        cy="30" 
-        r="25" 
-        className="fill-blue-400 animate-pulse" 
-      />
-    </svg>
+  <div className={`relative ${isCollapsed ? 'h-8 w-8' : 'h-12 w-auto'} flex items-center justify-center gap-3`}>
+    <img 
+      src="/path-to-your-logo.png" // Replace with your logo path
+      alt="Arenberg Logo"
+      className={`h-full w-auto object-contain ${isCollapsed ? 'rounded-full' : ''}`}
+    />
     {!isCollapsed && (
-      <span className="relative z-10 font-bold text-lg text-white">Arenberg</span>
+      <span className="font-bold text-lg">Arenberg</span>
     )}
   </div>
 );

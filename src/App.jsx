@@ -3,6 +3,9 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { Navbar } from './components/layout/Navbar';
 import { HomePage } from './components/pages/HomePage';
 import { RoomsPage } from './components/pages/RoomsPage';
+import { StudyPage } from './components/pages/StudyPage';
+import { CommunityPage } from './components/pages/CommunityPage';
+import { ContactPage } from './components/pages/ContactPage';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -19,7 +22,7 @@ const App = () => {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-blue-50">
+      <div className={`min-h-screen transition-colors duration-300`}>
         <Navbar 
           currentPage={currentPage}
           onPageChange={handlePageChange}
@@ -34,6 +37,9 @@ const App = () => {
         >
           {currentPage === 'home' && <HomePage onRoomsClick={() => handlePageChange('rooms')} />}
           {currentPage === 'rooms' && <RoomsPage />}
+          {currentPage === 'study' && <StudyPage />}
+          {currentPage === 'community' && <CommunityPage />}
+          {currentPage === 'contact' && <ContactPage />}
         </main>
       </div>
     </ThemeProvider>
